@@ -92,9 +92,9 @@ public class A_Temperature {
 			   	   TemperatureValueLessThanLowerLimitException,
 			   	   TemperatureValueGreaterThanUpperLimitException {
 		
-		Check(the_temperature_value_to_use);
-		
 		this.the_temperature_unit = the_temperature_unit_to_use;
+		
+		Check(the_temperature_value_to_use);
 		
 		this.the_temperature_value = the_temperature_value_to_use;
 		

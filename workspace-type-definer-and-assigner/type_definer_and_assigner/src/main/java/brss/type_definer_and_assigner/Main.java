@@ -8,9 +8,8 @@ public class Main
     		   TemperatureValueGreaterThanUpperLimitException
     {
         Celsius celsius = new Celsius();
-        //Fahrenheit fahrenheit = new Fahrenheit();
         
-        A_Temperature_Unit the_temperature_unit = new A_Temperature_Unit(celsius);
+        Fahrenheit fahrenheit = new Fahrenheit();
         
         A_Temperature my_temperature = new A_Temperature();
         
@@ -22,14 +21,14 @@ public class Main
         //my_temperature.Takes_A_Value_Of(-20000.0);
         // Program throws runtime TemperatureValueLessThanLowerLimitException
         
-        my_temperature.Takes_A_Unit_And_A_Value_Of(the_temperature_unit, 0.0); // Valid
+        my_temperature.Takes_A_Unit_And_A_Value_Of(new A_Temperature_Unit(celsius), 0.0); // Valid
         
-        my_temperature.Takes_A_Unit_And_A_Value_Of(the_temperature_unit, 0.0); // Valid
+        my_temperature.Takes_A_Unit_And_A_Value_Of(new A_Temperature_Unit(fahrenheit), 0.0); // Valid
         
         //my_temperature.Takes_A_Unit_And_A_Value_Of(new A_Temperature_Unit(kelvin), 0.0);
         // Eclipse throws compile-time error "kelvin cannot be resolved to a variable".
         
-        //my_temperature.Takes_A_Unit_And_A_Value_Of(the_temperature_unit, -302.00);
+        //my_temperature.Takes_A_Unit_And_A_Value_Of(A_Temperature_Unit(celsius), -302.00);
         // Program throws runtime TemperatureValueLessThanLowerLimitException.
         
     }
