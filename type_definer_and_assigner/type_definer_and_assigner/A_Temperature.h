@@ -33,27 +33,20 @@ namespace type_definer_and_assigner {
 		}
 
 
-		void Check_For_Divisibility_By_One_Hundredth_For(double the_temperature_value_to_check) {
-
-			if (round(the_temperature_value_to_check * 100.0) / 100.0 !=
-				the_temperature_value_to_check) {
-				throw Not_Divisible_By_One_Hundredth_Exception(
-					"Exception: Temperature value not divisible by one hundredth.");
-			}
-
-		};
-
-
 		void Check(double the_temperature_value_to_check) {
 
-			if (this->the_temperature_unit.The_Temperature_Scale().Type() == "Celsius") {
+			try {
+				if (round(the_temperature_value_to_check * 100.0) / 100.0 !=
+					the_temperature_value_to_check) {
+					throw Not_Divisible_By_One_Hundredth_Exception(
+						"Exception: Temperature value not divisible by one hundredth.");
+				}
+			}
+			catch (Not_Divisible_By_One_Hundredth_Exception& e) {
+				throw Not_Divisible_By_One_Hundredth_Exception(e.what());
+			}
 
-				try {
-					Check_For_Divisibility_By_One_Hundredth_For(the_temperature_value_to_check);
-				}
-				catch (Not_Divisible_By_One_Hundredth_Exception& e) {
-					throw Not_Divisible_By_One_Hundredth_Exception(e.what());
-				}
+			if (this->the_temperature_unit.The_Temperature_Scale().Type() == "Celsius") {
 
 				if (the_temperature_value_to_check < -273.15) {
 					throw Temperature_Value_Less_Than_Lower_Limit_Exception(
@@ -68,13 +61,6 @@ namespace type_definer_and_assigner {
 			}
 
 			if (this->the_temperature_unit.The_Temperature_Scale().Type() == "Fahrenheit") {
-
-				try {
-					Check_For_Divisibility_By_One_Hundredth_For(the_temperature_value_to_check);
-				}
-				catch (Not_Divisible_By_One_Hundredth_Exception& e) {
-					throw Not_Divisible_By_One_Hundredth_Exception(e.what());
-				}
 
 				if (the_temperature_value_to_check < -459.67) {
 					throw Temperature_Value_Less_Than_Lower_Limit_Exception(

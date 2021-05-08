@@ -19,25 +19,17 @@ public class A_Temperature {
 	}
 	
 	
-	public void Check_For_Divisibility_By_One_Hundredth_For(double the_temperature_value_to_check)
-		throws NotDivisibleByOneHundredthException {
-		
-		if (((double)Math.round(the_temperature_value_to_check * 100.0)) / 100.0 !=
-			the_temperature_value_to_check) {
-			throw new NotDivisibleByOneHundredthException("");
-		}
-		
-	}
-	
-	
 	public void Check(double the_temperature_value_to_check)
 		throws NotDivisibleByOneHundredthException,
 			   TemperatureValueLessThanLowerLimitException,
 			   TemperatureValueGreaterThanUpperLimitException {
 		
+		if (((double)Math.round(the_temperature_value_to_check * 100.0)) / 100.0 !=
+				the_temperature_value_to_check) {
+				throw new NotDivisibleByOneHundredthException("");
+			}
+		
 		if (this.the_temperature_unit.The_Temperature_Scale() instanceof Celsius) {
-			
-			Check_For_Divisibility_By_One_Hundredth_For(the_temperature_value_to_check);
 			
 			if (the_temperature_value_to_check < -273.15) {
 				throw new TemperatureValueLessThanLowerLimitException("Scale is Celsius.");
@@ -50,8 +42,6 @@ public class A_Temperature {
 		}
 		
 		if (this.the_temperature_unit.The_Temperature_Scale() instanceof Fahrenheit) {
-			
-			Check_For_Divisibility_By_One_Hundredth_For(the_temperature_value_to_check);
 			
 			if (the_temperature_value_to_check < -459.67) {
 				throw new TemperatureValueLessThanLowerLimitException("Scale is Fahrenheit.");
