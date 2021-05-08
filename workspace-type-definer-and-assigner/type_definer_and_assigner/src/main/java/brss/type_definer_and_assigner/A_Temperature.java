@@ -22,17 +22,9 @@ public class A_Temperature {
 	public void Check_For_Divisibility_By_One_Hundredth_For(double the_temperature_value_to_check)
 		throws NotDivisibleByOneHundredthException {
 		
-		double remainder = the_temperature_value_to_check % 0.01;
-		
-		if (Math.abs(Math.round(remainder * 100.0) / 100.0) == 0.01) {
-			if (Math.abs(Math.abs(the_temperature_value_to_check % 0.01) - 0.01) > 0.000001) {
-				throw new NotDivisibleByOneHundredthException("");
-			}
-		}
-		else {
-			if (Math.abs(the_temperature_value_to_check % 0.01) > 0.000001) {
-				throw new NotDivisibleByOneHundredthException("");
-			}
+		if (((double)Math.round(the_temperature_value_to_check * 100.0)) / 100.0 !=
+			the_temperature_value_to_check) {
+			throw new NotDivisibleByOneHundredthException("");
 		}
 		
 	}

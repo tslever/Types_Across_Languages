@@ -35,20 +35,11 @@ namespace type_definer_and_assigner {
 
 		void Check_For_Divisibility_By_One_Hundredth_For(double the_temperature_value_to_check) {
 
-			double remainder = fmod(the_temperature_value_to_check, 0.01);
-
-			if (abs(round(remainder * 100.0) / 100.0) == 0.01) {
-				if (abs(abs(fmod(the_temperature_value_to_check, 0.01)) - 0.01) > 0.000001) {
-					throw Not_Divisible_By_One_Hundredth_Exception(
-						"Exception: Temperature value not divisible by one hundredth.");
-				}
+			if (round(the_temperature_value_to_check * 100.0) / 100.0 !=
+				the_temperature_value_to_check) {
+				throw Not_Divisible_By_One_Hundredth_Exception(
+					"Exception: Temperature value not divisible by one hundredth.");
 			}
-			else {
-				if (abs(fmod(the_temperature_value_to_check, 0.01)) > 0.000001) {
-					throw Not_Divisible_By_One_Hundredth_Exception(
-						"Exception: Temperature value not divisible by one hundredth.");
-				}
-			};
 
 		};
 
