@@ -143,9 +143,6 @@
     <ClCompile Include="A_Temperature_Unit.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Invalid_Temperature_Value_Exception.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="Not_Divisible_By_One_Hundredth_Exception.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -164,7 +161,6 @@
     <ClInclude Include="A_Temperature.h" />
     <ClInclude Include="A_Temperature_Scale.h" />
     <ClInclude Include="A_Temperature_Unit.h" />
-    <ClInclude Include="Invalid_Temperature_Value_Exception.h" />
     <ClInclude Include="Not_Divisible_By_One_Hundredth_Exception.h" />
     <ClInclude Include="Temperature_Value_Greater_Than_Upper_Limit_Exception.h" />
     <ClInclude Include="Temperature_Value_Less_Than_Lower_Limit_Exception.h" />

@@ -1,5 +1,4 @@
 ﻿  A_Temperature_Unit.cpp
-  Invalid_Temperature_Value_Exception.cpp
   Not_Divisible_By_One_Hundredth_Exception.cpp
   A_Temperature.cpp
   Temperature_Value_Greater_Than_Upper_Limit_Exception.cpp

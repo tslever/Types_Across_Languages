@@ -19,15 +19,10 @@ namespace type_definer_and_assigner {
 
 	void A_Temperature::Check(double the_temperature_value_to_check) {
 
-		try {
-			if (round(the_temperature_value_to_check * 100.0) / 100.0 !=
-				the_temperature_value_to_check) {
-				throw Not_Divisible_By_One_Hundredth_Exception(
-					"Exception: Temperature value not divisible by one hundredth.");
-			}
-		}
-		catch (Not_Divisible_By_One_Hundredth_Exception& e) {
-			throw Not_Divisible_By_One_Hundredth_Exception(e.what());
+		if (round(the_temperature_value_to_check * 100.0) / 100.0 !=
+			the_temperature_value_to_check) {
+			throw Not_Divisible_By_One_Hundredth_Exception(
+				"Exception: Temperature value not divisible by one hundredth.");
 		}
 
 		if (this->the_temperature_scale == A_Temperature_Scale::CELSIUS) {
@@ -66,8 +61,14 @@ namespace type_definer_and_assigner {
 		try {
 			Check(the_temperature_value_to_use);
 		}
-		catch (std::exception& e) {
-			throw Invalid_Temperature_Value_Exception(e.what());
+		catch (Not_Divisible_By_One_Hundredth_Exception& e) {
+			throw Not_Divisible_By_One_Hundredth_Exception(e.what());
+		}
+		catch (Temperature_Value_Less_Than_Lower_Limit_Exception& e) {
+			throw Temperature_Value_Less_Than_Lower_Limit_Exception(e.what());
+		}
+		catch (Temperature_Value_Greater_Than_Upper_Limit_Exception& e) {
+			throw Temperature_Value_Greater_Than_Upper_Limit_Exception(e.what());
 		}
 
 		this->the_temperature_value = the_temperature_value_to_use;
@@ -83,8 +84,14 @@ namespace type_definer_and_assigner {
 		try {
 			Check(the_temperature_value_to_use);
 		}
-		catch (std::exception& e) {
-			throw Invalid_Temperature_Value_Exception(e.what());
+		catch (Not_Divisible_By_One_Hundredth_Exception& e) {
+			throw Not_Divisible_By_One_Hundredth_Exception(e.what());
+		}
+		catch (Temperature_Value_Less_Than_Lower_Limit_Exception& e) {
+			throw Temperature_Value_Less_Than_Lower_Limit_Exception(e.what());
+		}
+		catch (Temperature_Value_Greater_Than_Upper_Limit_Exception& e) {
+			throw Temperature_Value_Greater_Than_Upper_Limit_Exception(e.what());
 		}
 
 		this->the_temperature_value = the_temperature_value_to_use;

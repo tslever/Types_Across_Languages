@@ -9,10 +9,6 @@ using namespace type_definer_and_assigner;
 
 int main()
 {
-	//A_Temperature_Scale Celsius = A_Temperature_Scale("Celsius");
-
-	//A_Temperature_Scale Fahrenheit = A_Temperature_Scale("Fahrenheit");
-
 	A_Temperature my_temperature = A_Temperature();
 
 	//my_temperature = 100.0;
@@ -30,7 +26,6 @@ int main()
 		my_temperature.Takes_A_Value_Of(-20000.0);
 	}
 	catch (std::exception& e) {
-		std::cout << "-20000" << std::endl;
 		std::cerr << e.what() << std::endl;
 	}
 	// Program throws runtime "Exception: Temperature value less than lower limit.".
@@ -63,7 +58,6 @@ int main()
 		my_temperature.Takes_A_Unit_And_A_Value_Of(A_Temperature_Scale::CELSIUS, -302.00);
 	}
 	catch (std::exception& e) {
-		std::cout << "-302" << std::endl;
 		std::cerr << e.what() << std::endl;
 	}
 	// Program throws runtime "Exception: Temperature value less than lower limit.".

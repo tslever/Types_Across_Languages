@@ -7,7 +7,6 @@
 #include <typeinfo>
 
 #include "A_Temperature_Unit.h"
-#include "Invalid_Temperature_Value_Exception.h"
 #include "Not_Divisible_By_One_Hundredth_Exception.h"
 #include "Temperature_Value_Greater_Than_Upper_Limit_Exception.h"
 #include "Temperature_Value_Less_Than_Lower_Limit_Exception.h"
