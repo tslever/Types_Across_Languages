@@ -2,14 +2,19 @@ package brss.type_definer_and_assigner;
 
 public class A_Temperature {
 
-	private A_Temperature_Unit the_temperature_unit = new A_Temperature_Unit(new Celsius());
+	private A_Temperature_Unit the_temperature_unit;
 	
 	private double the_temperature_value;
 	
 	
 	public A_Temperature() {
-		
+		the_temperature_unit = new A_Temperature_Unit(new Celsius());
 	}
+	
+	public A_Temperature(A_Temperature_Unit the_temperature_unit_to_use) {
+		the_temperature_unit = the_temperature_unit_to_use;
+	}
+	
 	
 	
 	public void Takes_A_Unit_Of(A_Temperature_Unit the_temperature_unit_to_use) {

@@ -7,6 +7,7 @@ public class Main
     		   TemperatureValueLessThanLowerLimitException,
     		   TemperatureValueGreaterThanUpperLimitException
     {
+    	// TODO: Change A_Temperature_Scale to enum.
         Celsius celsius = new Celsius();
         
         Fahrenheit fahrenheit = new Fahrenheit();

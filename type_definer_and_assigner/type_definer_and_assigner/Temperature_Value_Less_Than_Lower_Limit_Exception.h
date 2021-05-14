@@ -11,21 +11,13 @@ namespace type_definer_and_assigner {
 	class Temperature_Value_Less_Than_Lower_Limit_Exception : public std::exception {
 
 	private:
-		const char* message = "";
-		explicit Temperature_Value_Less_Than_Lower_Limit_Exception() {
+		const char* message;
 
-		};
 
 	public:
-		explicit Temperature_Value_Less_Than_Lower_Limit_Exception(const char* message_to_use) {
-			this->message = message_to_use;
-		}
+		Temperature_Value_Less_Than_Lower_Limit_Exception(const char* message_to_use);
 
-		virtual const char* what() const throw() {
-
-			return this->message;
-
-		};
+		virtual const char* what() const throw();
 
 	};
 

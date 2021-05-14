@@ -18,6 +18,27 @@
     <ClCompile Include="type_definer_and_assigner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="A_Temperature_Scale.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A_Temperature_Unit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Invalid_Temperature_Value_Exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Not_Divisible_By_One_Hundredth_Exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Temperature_Value_Greater_Than_Upper_Limit_Exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Temperature_Value_Less_Than_Lower_Limit_Exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A_Temperature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="A_Temperature_Scale.h">
