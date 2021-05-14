@@ -18,9 +18,6 @@
     <ClCompile Include="type_definer_and_assigner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="A_Temperature_Scale.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="A_Temperature_Unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
