@@ -2,24 +2,24 @@ package brss.type_definer_and_assigner;
 
 public class A_Temperature {
 
-	private A_Temperature_Unit the_temperature_unit;
+	private A_Temperature_Scale the_temperature_scale;
 	
 	private double the_temperature_value;
 	
 	
 	public A_Temperature() {
-		the_temperature_unit = new A_Temperature_Unit(new Celsius());
+		the_temperature_scale = A_Temperature_Scale.CELSIUS;
 	}
 	
-	public A_Temperature(A_Temperature_Unit the_temperature_unit_to_use) {
-		the_temperature_unit = the_temperature_unit_to_use;
+	public A_Temperature(A_Temperature_Scale the_temperature_scale_to_use) {
+		the_temperature_scale = the_temperature_scale_to_use;
 	}
 	
 	
 	
-	public void Takes_A_Unit_Of(A_Temperature_Unit the_temperature_unit_to_use) {
+	public void Takes_A_Unit_Of(A_Temperature_Scale the_temperature_scale_to_use) {
 		
-		this.the_temperature_unit = the_temperature_unit_to_use;
+		this.the_temperature_scale = the_temperature_scale_to_use;
 		
 	}
 	
@@ -34,7 +34,7 @@ public class A_Temperature {
 				throw new NotDivisibleByOneHundredthException("");
 			}
 		
-		if (this.the_temperature_unit.The_Temperature_Scale() instanceof Celsius) {
+		if (this.the_temperature_scale == A_Temperature_Scale.CELSIUS) {
 			
 			if (the_temperature_value_to_check < -273.15) {
 				throw new TemperatureValueLessThanLowerLimitException("Scale is Celsius.");
@@ -46,7 +46,7 @@ public class A_Temperature {
 			
 		}
 		
-		if (this.the_temperature_unit.The_Temperature_Scale() instanceof Fahrenheit) {
+		if (this.the_temperature_scale == A_Temperature_Scale.FAHRENHEIT) {
 			
 			if (the_temperature_value_to_check < -459.67) {
 				throw new TemperatureValueLessThanLowerLimitException("Scale is Fahrenheit.");
@@ -74,12 +74,12 @@ public class A_Temperature {
 	
 	
 	public void Takes_A_Unit_And_A_Value_Of(
-		A_Temperature_Unit the_temperature_unit_to_use, double the_temperature_value_to_use)
+		A_Temperature_Scale the_temperature_scale_to_use, double the_temperature_value_to_use)
 			throws NotDivisibleByOneHundredthException,
 			   	   TemperatureValueLessThanLowerLimitException,
 			   	   TemperatureValueGreaterThanUpperLimitException {
 		
-		this.the_temperature_unit = the_temperature_unit_to_use;
+		this.the_temperature_scale = the_temperature_scale_to_use;
 		
 		Check(the_temperature_value_to_use);
 		
