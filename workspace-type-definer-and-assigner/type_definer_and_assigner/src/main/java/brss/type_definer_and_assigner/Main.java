@@ -7,7 +7,7 @@ public class Main
     	throws NotDivisibleByOneHundredthException,
     		   TemperatureValueLessThanLowerLimitException,
     		   TemperatureValueGreaterThanUpperLimitException
-    {    	
+    {
         A_Temperature my_temperature = new A_Temperature();
         
         //my_temperature = 100.0;
